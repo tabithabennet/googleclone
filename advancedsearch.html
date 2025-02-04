@@ -3,65 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Search</title>
+    <title>Google Advanced Search</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
+            margin: 20px;
         }
-        .links {
+        .nav-links {
             position: absolute;
             top: 10px;
             right: 20px;
         }
-        .links a {
-            margin-left: 15px;
+        .nav-links a {
             text-decoration: none;
             color: black;
         }
-        .search-container {
+        h1 {
             text-align: center;
         }
+        .search-container {
+            max-width: 600px;
+            margin: auto;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
         input[type="text"] {
-            width: 500px;
-            padding: 10px;
-            border-radius: 25px;
-            border: 1px solid #dfe1e5;
-            outline: none;
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
         .buttons {
             margin-top: 20px;
+            text-align: left;
         }
         button {
-            background-color: #f8f9fa;
-            border: 1px solid #dfe1e5;
-            padding: 10px 20px;
-            margin: 5px;
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
             cursor: pointer;
-            border-radius: 5px;
-        }
-        button:hover {
-            background-color: #e8e9eb;
         }
     </style>
 </head>
 <body>
-    <div class="links">
-        <a href="https://tabithabennet.github.io/googleclone/imagesearch.html">Image Search</a>
-        <a href="https://tabithabennet.github.io/googleclone/advancedsearch.html">Advanced Search</a>
+    <div class="nav-links">
+        <a href="index.html">Google Search</a>
     </div>
+    <h1>Google Advanced Search</h1>
     <div class="search-container">
-        <h1 style="font-size: 50px; font-weight: normal;">Google</h1>
         <form action="https://www.google.com/search" method="GET">
-            <input type="text" name="q" required>
+            <label>Find pages with all these words:
+                <input type="text" name="as_q">
+            </label>
+            <label>Find pages with this exact word or phrase:
+                <input type="text" name="as_epq">
+            </label>
+            <label>Find pages with any of these words:
+                <input type="text" name="as_oq">
+            </label>
+            <label>Find pages with none of these words:
+                <input type="text" name="as_eq">
+            </label>
             <div class="buttons">
-                <button type="submit">Google Search</button>
-                <button type="submit" name="btnI" value="I'm Feeling Lucky">I'm Feeling Lucky</button>
+                <button type="submit">Advanced Search</button>
             </div>
         </form>
     </div>
